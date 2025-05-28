@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <title>r0xa</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Fira Code', monospace;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      color: #33ff00;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      50% {
+        opacity: 1;
+      }
+
+      50.01%,
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .glitch {
+      color: #33ff00;
+      animation: glitch 1s infinite;
+    }
+
+    .hover-glitch:hover {
+      animation: glitch 1s infinite;
+      color: #33ff00;
+      text-shadow: 1px 1px red, -1px -1px cyan;
+    }
+
+    @keyframes glitch {
+      0% {
+        text-shadow: 1px 1px red;
+      }
+
+      20% {
+        text-shadow: -2px 2px blue;
+      }
+
+      40% {
+        text-shadow: 2px -2px lime;
+      }
+
+      60% {
+        text-shadow: -1px -1px #ff00ff;
+      }
+
+      80% {
+        text-shadow: 1px -1px cyan;
+      }
+
+      100% {
+        text-shadow: none;
+      }
+    }
+
+    .neon-text {
+      color: #33ff00;
+      text-shadow: 0 0 5px #33ff00, 0 0 10px #33ff00, 0 0 20px #33ff00;
+    }
+
+    .glitch-img {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .glitch-photo {
+      width: 100%;
+      border-radius: 12px;
+      z-index: 1;
+      display: block;
+      position: relative;
+    }
+
+    .glitch-photo::before,
+    .glitch-photo::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('image/20250527_1345_Hacker%20Bertopeng%20Vendetta_simple_compose_01jw84ardnf6d8kbxajg109fxq.png') no-repeat center/cover;
+      mix-blend-mode: screen;
+      pointer-events: none;
+      opacity: 0.6;
+      border-radius: 12px;
+      z-index: 2;
+    }
+
+    .glitch-photo::before {
+      animation: glitchPhotoBefore 1.5s infinite linear alternate;
+      filter: drop-shadow(-2px 0 red);
+    }
+
+    .glitch-photo::after {
+      animation: glitchPhotoAfter 1.5s infinite linear alternate;
+      filter: drop-shadow(2px 0 cyan);
+    }
+
+    @keyframes glitchPhotoBefore {
+      0% {
+        clip-path: inset(0 0 60% 0);
+        transform: translate(0);
+      }
+
+      50% {
+        clip-path: inset(10% 0 40% 0);
+        transform: translate(-3px, 1px);
+      }
+
+      100% {
+        clip-path: inset(0 0 60% 0);
+        transform: translate(0);
+      }
+    }
+
+    @keyframes glitchPhotoAfter {
+      0% {
+        clip-path: inset(60% 0 0 0);
+        transform: translate(0);
+      }
+
+      50% {
+        clip-path: inset(40% 0 10% 0);
+        transform: translate(3px, -1px);
+      }
+
+      100% {
+        clip-path: inset(60% 0 0 0);
+        transform: translate(0);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white font-mono">
+
+  <!-- Navbar -->
+  <nav class="flex justify-center h-[80px] sticky top-0 z-50 bg-black shadow-md">
+    <div class="w-full max-w-screen-xl flex items-center justify-between px-4">
+      <a href="#" class="text-xl font-bold glitch text-white">R0XA</a>
+      <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <div id="menu" class="hidden absolute top-[80px] left-0 w-full bg-black z-40 flex-col items-start space-y-4 px-6 py-6
+        md:static md:flex md:flex-row md:items-center md:space-y-0 md:space-x-6 md:w-auto md:p-0 md:bg-transparent">
+
+        <a href="#" class="hover:text-green-500 neon-text hover-glitch text-white">Home</a>
+        <a href="#skills" class="hover:text-green-500 neon-text hover-glitch text-white">Skills</a>
+        <a href="#projects" class="hover:text-green-500 neon-text hover-glitch text-white">Projects</a>
+        <a href="#bugbounty" class="hover:text-green-500 neon-text hover-glitch text-white">Bug Bounty</a>
+        <a href="#"
+          class="bg-yellow-500 hover:text-black text-black md:text-white hover:bg-yellow-400 px-4 py-2 rounded-md transition">Buy
+          me a coffee</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-black py-16 border-b border-gray-800">
+    <div class="container mx-auto max-w-screen-xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4">
+      <p id="typedText" class="text-lg text-justify"></p>
+      <div class="glitch-img max-w-sm w-full mx-auto rounded-lg shadow-lg transition-transform hover:scale-105">
+        <img src="image/20250527_1345_Hacker%20Bertopeng%20Vendetta_simple_compose_01jw84ardnf6d8kbxajg109fxq.png"
+          alt="Hacker Vendetta" class="glitch-photo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="bg-black py-16 border-t border-gray-800">
+    <div class="container mx-auto max-w-screen-xl px-4">
+      <h2 class="text-2xl font-bold text-center mb-8"># SKILLS</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center">
+        <div class="bg-gray-900 p-4 rounded-lg hover:bg-green-500 transition">Web Pentest</div>
+        <div class="bg-gray-900 p-4 rounded-lg hover:bg-green-500 transition">Python</div>
+        <div class="bg-gray-900 p-4 rounded-lg hover:bg-green-500 transition">Bash</div>
+        <div class="bg-gray-900 p-4 rounded-lg hover:bg-green-500 transition">Linux Master</div>
+        <div class="bg-gray-900 p-4 rounded-lg hover:bg-green-500 transition">CTF Player</div>
+        <div class="bg-gray-900 p-4 rounded-lg hover:bg-green-500 transition">C++</div>
+        <div class="bg-gray-900 p-4 rounded-lg hover:bg-green-500 transition">SQL</div>
+        <div class="bg-gray-900 p-4 rounded-lg hover:bg-green-500 transition">Arduino</div>
+        <div class="bg-gray-900 p-4 rounded-lg hover:bg-green-500 transition">Web Developer</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-20 border-t border-gray-800">
+    <div class="container mx-auto max-w-screen-xl px-4">
+      <h2 class="text-2xl font-bold text-center mb-8"># PROJECTS</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="bg-gray-900 rounded-lg transition hover:scale-105 overflow-hidden">
+          <img src="image/xmlrpcpy.png" alt="XMLRPC Attack Project" class="w-full block" />
+          <div class="p-6 text-white text-center font-mono">
+            <p class="text-lg text-justify mb-4">Attacking XMLRPC on WordPress site</p>
+            <a href="https://github.com/ForwardEcho/xmlrpc-attack" target="_blank"
+              class="inline-block text-yellow-400 hover:text-yellow-300 transition font-semibold">Visit
+              Repository</a>
+          </div>
+        </div>
+
+        <div class="bg-gray-900 rounded-lg transition hover:scale-105 overflow-hidden">
+          <img src="image/whatspie.png" alt="Project 2" class="w-full block" />
+          <div class="p-6 text-white text-center font-mono">
+            <p class="text-lg text-justify mb-4">Whatspie Laravel</p>
+            <a href="https://github.com/ForwardEcho/WhatsPie-Laravel"
+              class="inline-block text-yellow-400 hover:text-yellow-300 transition font-semibold">Visit
+              Repository</a>
+          </div>
+        </div>
+
+        <div class="bg-gray-900 rounded-lg transition hover:scale-105 overflow-hidden">
+          <img src="image/wa-gateway.png" alt="Project 3" class="w-full block" />
+          <div class="p-6 text-white text-center font-mono">
+            <p class="text-lg text-justify mb-4">
+              Integration between laravel & <a href="https://github.com/mimamch/wa-gateway"
+                class="text-green-300">wa-gateway</a>
+            </p>
+            <a href="#" class="inline-block text-yellow-400 hover:text-yellow-300 transition font-semibold">Visit
+              Repository</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bug Bounty -->
+  <section id="bugbounty" class="py-20 border-t border-gray-800">
+    <div class="container mx-auto max-w-screen-xl px-4">
+      <h2 class="text-2xl font-bold text-center mb-8"># BUG BOUNTY</h2>
+      <ul class="list-disc list-inside">
+        <li>Certificate from Banyuwangi Regency</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script>
+    const text = 'Hello World, I am R0XA';
+    const typedText = document.getElementById('typedText');
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        typedText.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+      } else {
+        typedText.innerHTML += '<span class="cursor">|</span>';
+      }
+    }
+    window.onload = typeWriter;
+
+    // Burger toggle
+    const menuBtn = document.getElementById("menu-btn");
+    const menu = document.getElementById("menu");
+
+    menuBtn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  </script>
+</body>
+
+</html>
