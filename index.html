@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <title>r0xa</title>
   <style>
     html {
@@ -39,9 +40,19 @@
     }
 
     @keyframes matrixFall {
-      0% { transform: translateY(-100vh); opacity: 1; }
-      70% { opacity: 1; }
-      100% { transform: translateY(100vh); opacity: 0; }
+      0% {
+        transform: translateY(-100vh);
+        opacity: 1;
+      }
+
+      70% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
     }
 
     .cursor {
@@ -52,8 +63,16 @@
     }
 
     @keyframes blink {
-      0%, 50% { opacity: 1; }
-      50.01%, 100% { opacity: 0; }
+
+      0%,
+      50% {
+        opacity: 1;
+      }
+
+      50.01%,
+      100% {
+        opacity: 0;
+      }
     }
 
     .glitch {
@@ -83,34 +102,98 @@
     }
 
     @keyframes glitch {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+
+      0%,
+      19%,
+      21%,
+      23%,
+      25%,
+      54%,
+      56%,
+      100% {
         transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0deg, 0deg);
       }
-      20% { transform: translate3d(-2px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0deg, 0deg); }
-      22% { transform: translate3d(2px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0deg, 0deg); }
-      24% { transform: translate3d(-1px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0deg, 0deg); }
-      55% { transform: translate3d(1px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0deg, 0deg); }
+
+      20% {
+        transform: translate3d(-2px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0deg, 0deg);
+      }
+
+      22% {
+        transform: translate3d(2px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0deg, 0deg);
+      }
+
+      24% {
+        transform: translate3d(-1px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0deg, 0deg);
+      }
+
+      55% {
+        transform: translate3d(1px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0deg, 0deg);
+      }
     }
 
     @keyframes glitch-1 {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { transform: translate3d(0, 0, 0); }
-      20% { transform: translate3d(-2px, -2px, 0); }
-      22% { transform: translate3d(2px, 2px, 0); }
-      24% { transform: translate3d(-1px, 1px, 0); }
-      55% { transform: translate3d(1px, -1px, 0); }
+
+      0%,
+      19%,
+      21%,
+      23%,
+      25%,
+      54%,
+      56%,
+      100% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      20% {
+        transform: translate3d(-2px, -2px, 0);
+      }
+
+      22% {
+        transform: translate3d(2px, 2px, 0);
+      }
+
+      24% {
+        transform: translate3d(-1px, 1px, 0);
+      }
+
+      55% {
+        transform: translate3d(1px, -1px, 0);
+      }
     }
 
     @keyframes glitch-2 {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { transform: translate3d(0, 0, 0); }
-      20% { transform: translate3d(2px, 2px, 0); }
-      22% { transform: translate3d(-2px, -2px, 0); }
-      24% { transform: translate3d(1px, -1px, 0); }
-      55% { transform: translate3d(-1px, 1px, 0); }
+
+      0%,
+      19%,
+      21%,
+      23%,
+      25%,
+      54%,
+      56%,
+      100% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      20% {
+        transform: translate3d(2px, 2px, 0);
+      }
+
+      22% {
+        transform: translate3d(-2px, -2px, 0);
+      }
+
+      24% {
+        transform: translate3d(1px, -1px, 0);
+      }
+
+      55% {
+        transform: translate3d(-1px, 1px, 0);
+      }
     }
 
     .neon-text {
       color: #00ff41;
-      text-shadow: 
+      text-shadow:
         0 0 5px #00ff41,
         0 0 10px #00ff41,
         0 0 20px #00ff41,
@@ -119,7 +202,7 @@
 
     .neon-border {
       border: 2px solid #00ff41;
-      box-shadow: 
+      box-shadow:
         0 0 10px #00ff41,
         inset 0 0 10px rgba(0, 255, 65, 0.1);
     }
@@ -132,7 +215,7 @@
 
     .card-hover:hover {
       transform: translateY(-10px) scale(1.02);
-      box-shadow: 
+      box-shadow:
         0 20px 40px rgba(0, 255, 65, 0.1),
         0 0 20px rgba(0, 255, 65, 0.3);
       border-color: #00ff41;
@@ -207,10 +290,17 @@
       background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 65, 0.1) 50%, transparent 70%);
       opacity: 0;
       transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 1;
     }
 
     .project-card:hover::before {
       opacity: 1;
+    }
+
+    .project-card .p-6 {
+      position: relative;
+      z-index: 2;
     }
 
     .project-card:hover {
@@ -230,8 +320,15 @@
     }
 
     @keyframes floating {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     .typewriter {
@@ -243,8 +340,13 @@
     }
 
     @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
+      from {
+        width: 0
+      }
+
+      to {
+        width: 100%
+      }
     }
 
     .glow-btn {
@@ -291,19 +393,23 @@
         md:static md:flex md:flex-row md:items-center md:space-y-0 md:space-x-8 md:w-auto md:p-0 md:bg-transparent">
         <a href="#" class="hover:text-green-400 transition duration-300 relative group">
           Home
-          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"></span>
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"></span>
         </a>
         <a href="#skills" class="hover:text-green-400 transition duration-300 relative group">
           Skills
-          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"></span>
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"></span>
         </a>
         <a href="#projects" class="hover:text-green-400 transition duration-300 relative group">
           Projects
-          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"></span>
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"></span>
         </a>
         <a href="#bugbounty" class="hover:text-green-400 transition duration-300 relative group">
           Bug Bounty
-          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"></span>
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"></span>
         </a>
         <a href="#" class="glow-btn text-white px-6 py-2 rounded-full transition font-semibold">
           ☕ Buy me a coffee
@@ -321,9 +427,9 @@
           <p id="typedText" class="min-h-[2.5rem]"></p>
         </div>
         <div class="flex space-x-4 pt-6">
-          <a href="#projects"><button class="neon-border px-6 py-3 rounded-lg hover:bg-green-400 hover:text-black transition duration-300">
-            Projects
-          </a></button>
+          <button class="neon-border px-6 py-3 rounded-lg hover:bg-green-400 hover:text-black transition duration-300">
+            View Projects
+          </button>
           <button class="border border-gray-600 px-6 py-3 rounded-lg hover:border-green-400 transition duration-300">
             Contact Me
           </button>
@@ -332,7 +438,8 @@
       <div class="floating">
         <div class="neon-border rounded-2xl p-2 max-w-md mx-auto">
           <div class="bg-gradient-to-br from-gray-900 to-black rounded-xl p-8 text-center">
-            <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+            <div
+              class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
               <span class="text-4xl">🎭</span>
             </div>
             <h3 class="text-2xl font-bold mb-2 neon-text">R0XA</h3>
@@ -402,14 +509,15 @@
           <div class="h-48 bg-gradient-to-br from-red-500 to-pink-500 flex items-center justify-center">
             <span class="text-6xl">⚔️</span>
           </div>
-          <div class="p-6">
+          <div class="p-6 relative z-10">
             <h3 class="text-xl font-bold mb-3 neon-text">XMLRPC Attack</h3>
             <p class="text-gray-300 mb-4">Advanced WordPress XMLRPC exploitation tool for penetration testing</p>
             <a href="https://github.com/ForwardEcho/xmlrpc-attack" target="_blank"
-              class="inline-flex items-center text-yellow-400 hover:text-yellow-300 transition font-semibold">
+              class="inline-flex items-center text-yellow-400 hover:text-yellow-300 transition font-semibold z-20 relative">
               <span>View Repository</span>
               <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
               </svg>
             </a>
           </div>
@@ -419,14 +527,15 @@
           <div class="h-48 bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center">
             <span class="text-6xl">📱</span>
           </div>
-          <div class="p-6">
+          <div class="p-6 relative z-10">
             <h3 class="text-xl font-bold mb-3 neon-text">Whatspie Laravel</h3>
             <p class="text-gray-300 mb-4">WhatsApp integration system built with Laravel framework</p>
             <a href="https://github.com/ForwardEcho/WhatsPie-Laravel" target="_blank"
-              class="inline-flex items-center text-yellow-400 hover:text-yellow-300 transition font-semibold">
+              class="inline-flex items-center text-yellow-400 hover:text-yellow-300 transition font-semibold z-20 relative">
               <span>View Repository</span>
               <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
               </svg>
             </a>
           </div>
@@ -436,13 +545,16 @@
           <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
             <span class="text-6xl">🔌</span>
           </div>
-          <div class="p-6">
+          <div class="p-6 relative z-10">
             <h3 class="text-xl font-bold mb-3 neon-text">WA Gateway Integration</h3>
-            <p class="text-gray-300 mb-4">Laravel integration with <a href="https://github.com/mimamch/wa-gateway" class="text-green-400">wa-gateway</a> system</p>
-            <a href="#" class="inline-flex items-center text-yellow-400 hover:text-yellow-300 transition font-semibold">
+            <p class="text-gray-300 mb-4">Laravel integration with <a href="https://github.com/mimamch/wa-gateway"
+                class="text-green-400">wa-gateway</a> system</p>
+            <a href="#"
+              class="inline-flex items-center text-yellow-400 hover:text-yellow-300 transition font-semibold z-20 relative">
               <span>View Repository</span>
               <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
               </svg>
             </a>
           </div>
@@ -459,13 +571,15 @@
         <div class="card-hover rounded-xl p-8">
           <div class="flex items-start space-x-4">
             <div class="flex-shrink-0">
-              <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
                 <span class="text-xl">🏆</span>
               </div>
             </div>
             <div>
               <h3 class="text-xl font-bold mb-2 neon-text">Security Recognition</h3>
-              <p class="text-gray-300">Certificate from Banyuwangi Regency for responsible disclosure of security vulnerabilities</p>
+              <p class="text-gray-300">Certificate from Banyuwangi Regency for responsible disclosure of security
+                vulnerabilities</p>
               <div class="mt-4 flex space-x-2">
                 <span class="px-3 py-1 bg-green-900 text-green-300 rounded-full text-sm">Verified</span>
                 <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm">Government</span>
@@ -496,7 +610,7 @@
     function createMatrixRain() {
       const matrixBg = document.getElementById('matrixBg');
       const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワン';
-      
+
       for (let i = 0; i < 50; i++) {
         const char = document.createElement('div');
         char.className = 'matrix-char';
@@ -523,7 +637,7 @@
     function typeWriter() {
       const typedText = document.getElementById('typedText');
       const currentText = texts[textIndex];
-      
+
       if (!isDeleting && charIndex < currentText.length) {
         typedText.innerHTML = currentText.substring(0, charIndex + 1) + '<span class="cursor">|</span>';
         charIndex++;
@@ -645,7 +759,7 @@
           }
         }
       }
-      
+
       // Add new characters
       for (let i = 0; i < 10; i++) {
         const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワン';
@@ -661,13 +775,13 @@
 
     // Add click effect to buttons
     document.querySelectorAll('button, .neon-border, .glow-btn').forEach(btn => {
-      btn.addEventListener('click', function(e) {
+      btn.addEventListener('click', function (e) {
         const ripple = document.createElement('span');
         const rect = this.getBoundingClientRect();
         const size = Math.max(rect.width, rect.height);
         const x = e.clientX - rect.left - size / 2;
         const y = e.clientY - rect.top - size / 2;
-        
+
         ripple.style.width = ripple.style.height = size + 'px';
         ripple.style.left = x + 'px';
         ripple.style.top = y + 'px';
@@ -677,11 +791,11 @@
         ripple.style.transform = 'scale(0)';
         ripple.style.animation = 'ripple 0.6s linear';
         ripple.style.pointerEvents = 'none';
-        
+
         this.style.position = 'relative';
         this.style.overflow = 'hidden';
         this.appendChild(ripple);
-        
+
         setTimeout(() => {
           ripple.remove();
         }, 600);
